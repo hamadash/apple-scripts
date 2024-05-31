@@ -1,17 +1,5 @@
 #!/usr/bin/osascript
 
-# Required parameters:
-# @raycast.schemaVersion 1
-# @raycast.title DisplayCursorMover
-# @raycast.mode silent
-
-# Optional parameters:
-# @raycast.icon 🤖
-
-# Documentation:
-# @raycast.author hamadash
-# @raycast.authorURL https://raycast.com/hamadash
-
 use AppleScript version "2.8"
 use framework "AppKit"
 
@@ -21,7 +9,6 @@ set currentMouseX to x of currentMouseLocation
 -- Macbook:          1440 x 900
 -- External Display: 1920 x 1080
 set DISPLAY_RESOLUTIONS to {{1440, 900}, {1920, 1080}}
--- ???????????????????
 set NEW_MOUSE_LOCATIONS to {{720, 380}, {2400, 540}}
 
 set firstDisplayWidth to item 1 of item 1 of DISPLAY_RESOLUTIONS
@@ -45,5 +32,4 @@ on moveTo(newX, newY)
   current application's CGPostMouseEvent(point, 1, 1, 0)
 end moveTo
 
--- ???????????????????????????
 displayName
